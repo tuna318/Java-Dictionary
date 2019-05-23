@@ -8,17 +8,17 @@
 <?import javafx.scene.layout.*?>
 
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="358.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.Controller">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="358.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DeleteWordController">
    <children>
       <Label prefHeight="64.0" prefWidth="257.0" text="Do you want to delete this word from your dictionary?" textAlignment="CENTER" wrapText="true" />
       <HBox alignment="TOP_CENTER">
          <children>
-            <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="74.0" text="Yes">
+            <Button fx:id="delWord" mnemonicParsing="false" prefHeight="31.0" prefWidth="74.0" onAction="#eventsHandle" text="Yes">
                <HBox.margin>
                   <Insets bottom="10.0" right="5.0" top="5.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" text="Cancel">
+            <Button fx:id="backButton" mnemonicParsing="false" text="Cancel" onAction="#eventsHandle">
                <HBox.margin>
                   <Insets bottom="10.0" left="5.0" right="10.0" top="5.0" />
                </HBox.margin>

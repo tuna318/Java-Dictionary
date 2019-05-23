@@ -59,7 +59,7 @@ public class DatabaseMN {
     }
 
     public void updateWord(Word word, String table){
-        String sql = String.format("UPDATE %s SET meaning = '%s' WHERE word = '%s'", table, word.getMeaning(), word.getWord());
+        String sql = String.format("UPDATE %s SET meaning = '%s' WHERE word LIKE '%s'", table, word.getMeaning(), word.getWord());
 
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -67,16 +67,6 @@ public class DatabaseMN {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-    }
-
-
-    public static void main(String[] args){
-        Word word;
-        DatabaseMN testdb = new DatabaseMN();
-        word = testdb.searchWord("race way", "EnVi");
-        System.out.println(word.getWord() + ": " + word.getMeaning());
-        Word word2 = new Word("fan", "Người hâm mộ nhiệt thành");
-        testdb.updateWord(word2, "EnVi");
     }
 }
 
