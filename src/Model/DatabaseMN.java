@@ -22,7 +22,7 @@ public class DatabaseMN {
     }
 
     public Word searchWord(String word, String table){
-        String sql = String.format("SELECT * FROM %s WHERE %s.word LIKE '%%%s%%'", table.trim(), table.trim(), word.trim());
+        String sql = String.format("SELECT * FROM %s WHERE %s.word LIKE '%s'", table.trim(), table.trim(), word.trim());
         Word item = new Word();
         try (Connection conn = this.connect();
              Statement  stmt = conn.createStatement();
